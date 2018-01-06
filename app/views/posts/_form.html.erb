@@ -1,0 +1,81 @@
+<%= form_with(model: post, local: true, class:'form') do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-5">
+      <%= form.text_field :title, id: :post_title, class:"form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Image</label>
+    <div class="col-sm-3">
+      <%= form.file_field :image, class:"custom-file-input", id: :post_image_data %>
+      <label class="custom-file-label pd-left" for="customFile">Choose file</label>
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Category</label>
+    <div class="col-sm-2">
+      <%= form.select :category, Settings.site.category_kinds, {},class:'custom-select mr-sm-2' %>
+    </div>
+  </div>
+
+  <div class="col-sm-7 nopadding">
+    <%= form.label :description %>
+    <%= form.trix_editor :description, id: :post_description %>
+  </div>
+  <br />
+  <div class="field">
+    <%= form.label :embed_files, "Embed Code (Place Instagram, Twitter, or YouTube embed code here)" %>
+    <%= form.text_area :embed_files, id: :post_embed_files, class:'form-control col-sm-7', rows:'3' %>
+  </div>
+  <br />
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Tags (separated by commas)</label>
+    <div class="col-sm-5">
+      <%= form.text_field :tag_list, class:"form-control" %>
+    </div>
+  </div>
+
+  <% unless action_name == "edit" %>
+  <div class="field">
+    <%= form.hidden_field :authord_id, id: :post_authord_id, value:@current_user.id %>
+  </div>
+  <% end %>
+  
+  <div class="col-auto my-1">
+    <div class="form-check">
+      <%= form.check_box :featured, class:"form-check-input" %>
+      <label class="form-check-label" for="autoSizingCheck2">
+        Post will be featured on the slider on Home Page
+      </label>
+    </div>
+  </div>
+  
+  
+  <div class="col-auto my-1">
+    <div class="form-check">
+      <%= form.check_box :spotlighted, class:"form-check-input" %>
+      <label class="form-check-label" for="autoSizingCheck2">
+        Make post featured for its category
+      </label>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-light' %>
+  </div>
+<% end %>

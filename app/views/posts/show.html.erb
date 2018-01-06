@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-9">
+    <h1 class="news"><%= @post.category %></h1>
+      <%= image_tag @post.image_url, class:'post-img' %>
+      <p class="post-title"><%= @post.title %></p>
+      <div class="description-text">
+        <%= @post.description.html_safe %>
+      </div>
+      <div class="embed-files">
+        <center><%= @post.embed_files.html_safe %></center>
+      </div>
+      <div class="tags">
+        <h5>Tags:</h5> <%= raw @post.tag_list.split(',').map{|t| link_to t, tag_path(t), class:'post-tag' }.join(', ') %>
+      </div>
+  </div>
+  <div class="col-3">
+    adds
+  </div>
+</div>
+
+<div class="comment-section col-9">
+  <div id="disqus_thread"></div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+    */
+  var disqus_config = function () {
+      this.shortname = "dmvevents";
+      this.page.identifier = 'post-<%= @post.id %>';
+      this.page.title = '<%= @post.title %>';
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = 'https://dmvevents.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

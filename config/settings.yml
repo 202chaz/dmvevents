@@ -1,0 +1,3 @@
+site:
+  category_kinds: ["news", "music", "mixtapes", "videos", "lifestyle"]
+  sitename: "DMVEvents"

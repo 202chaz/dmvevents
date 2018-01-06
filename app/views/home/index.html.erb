@@ -1,0 +1,48 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= message_type(key) %>" role="alert"><%= value %></div>
+<% end %>
+<div class="row">
+  <div class="col-9">
+          
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% @featured_post.each_with_index do |post, index| %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>"></li>
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+            <% @featured_post.each_with_index do |post, index| %>
+            <div class="carousel-item">
+              <%= image_tag post.image_url, class:'d-block w-100' %>
+              <div class="carousel-caption d-none d-md-block">
+                  <h4><%= post.title %></h4>
+                </div>
+            </div>
+            <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
+      
+      <div class="latest-news">
+        <h2 class="news">Latest News</h2>
+        
+        <% @latest_news.each do |post| %>
+            <div class="entry">
+              <p class="entry-comments">10</p>
+              <%= image_tag post.image_url, class:'image-load' %>
+              <p class="entry-title"><%= post.title %></p>
+              <p class="entry-meta">Some data</p>
+            </div>
+          <% end %>
+  </div>
+  <div class='col-3'>
+    some Add
+  </div>
+</div>
