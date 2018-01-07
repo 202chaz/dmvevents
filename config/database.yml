@@ -19,4 +19,5 @@ test:
 production:
   username: rails
   password: <%= ENV['RAIL_RAIL_POSTGRESS_PASS'] %>
+  database: dmvevents_production
 
