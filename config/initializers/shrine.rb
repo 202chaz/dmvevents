@@ -1,9 +1,9 @@
 require "shrine/storage/s3"
 
 s3_options = {
-  access_key_id: "FZYSCRABCOA5CCYCWSYH",
-  secret_access_key: "xkgZfwLsGjtTV4BEtFEUkA1A0WktgwQL70lvCuo3NMY",
-  bucket: "dmvevents",
+  access_key_id: Rails.application.secrets.digitalocean_spaces_key,
+  secret_access_key: Rails.application.secrets.digitalocean_secret_key,
+  bucket: Rails.application.secrets.digitalocean_bucket_key,
   endpoint: 'https://nyc3.digitaloceanspaces.com',
   region: 'nyc3'
 }
