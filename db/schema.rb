@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180106162328) do
     t.text "embed_files"
     t.string "category"
     t.integer "authord_id"
+    t.integer "visit_counter", default: 64
     t.boolean "featured", default: false
     t.boolean "spotlighted", default: false
     t.datetime "created_at", null: false

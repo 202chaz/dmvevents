@@ -31,5 +31,10 @@ class Post < ApplicationRecord
       Tag.where(name: n.strip).first_or_create!
     end
   end
+  
+  def increase_visit
+    self.visit_counter+=1
+    save!
+  end
     
 end

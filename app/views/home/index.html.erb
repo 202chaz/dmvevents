@@ -38,7 +38,7 @@
                 <!-- <p class="entry-comments">10</p> -->
                 <%= image_tag post.image_url, class:'image-load' %>
                 <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
-                <p class="entry-meta"></p>
+                <p class="entry-meta"><%= post.visit_counter %> views</p>
                 <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
               </div>
             <% end %>
@@ -53,7 +53,7 @@
                 <!-- <p class="entry-comments">10</p> -->
                 <%= image_tag post.image_url, class:'image-load' %>
                 <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
-                <p class="entry-meta"></p>
+                <p class="entry-meta"><%= post.visit_counter %> views</p>
                 <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
               </div>
             <% end %>
@@ -68,7 +68,7 @@
                 <!-- <p class="entry-comments">10</p> -->
                 <%= image_tag post.image_url, class:'image-load' %>
                 <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
-                <p class="entry-meta"></p>
+                <p class="entry-meta"><%= post.visit_counter %> views</p>
                 <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
               </div>
             <% end %>
@@ -83,7 +83,7 @@
                 <!-- <p class="entry-comments">10</p> -->
                 <%= image_tag post.image_url, class:'image-load' %>
                 <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
-                <p class="entry-meta"></p>
+                <p class="entry-meta"><%= post.visit_counter %> views</p>
                 <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
               </div>
             <% end %>
@@ -92,6 +92,7 @@
             
     </div>
   <div class='col-3'>
-    <%= link_to 'Create Post', new_post_path, class:'btn btn-secondary btn-lg btn-block'%>
+    <br />
+    <%= link_to 'Create Post', new_post_path, class:'btn btn-secondary btn-lg btn-block' if current_user.try(:has_proper_access?) %>
   </div>
 </div>

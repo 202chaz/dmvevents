@@ -18,6 +18,8 @@ class PostsController < ApplicationController
   def show
     @post_id = params[:id]
     @post_title = params[:slug]
+    @post = Post.find(params[:id])
+    @post.increase_visit
   end
 
   # GET /posts/new
@@ -28,6 +30,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    authorize @post
   end
 
   # POST /posts
@@ -81,6 +84,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:image, :title, :description, :embed_files, :category, :authord_id, :featured, :spotlighted, :tag_list)
+      params.require(:post).permit(:image, :title, :description, :embed_files, :category, :authord_id, :featured, :spotlighted, :tag_list, :visit_counter)
     end
 end

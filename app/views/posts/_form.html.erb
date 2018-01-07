@@ -76,6 +76,17 @@
   </div>
 
   <div class="actions">
-    <%= form.submit class:'btn btn-light' %>
+    <%= form.submit class:'btn btn-light', onclick:'adjustEmbedVideosSize()' %>
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#post_embed_files').blur(function() {
+      var newVid = $(this).val().replace('width="560"', 'width="1052"').replace('height="315"', 'height="591"');
+      $(this).val("");
+      $(this).val(newVid);
+    })
+  })
+</script>
+
