@@ -37,6 +37,7 @@ gem 'devise'
 gem 'pundit'
 gem 'seed_dump'
 gem 'pg'
+gem 'capistrano'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
