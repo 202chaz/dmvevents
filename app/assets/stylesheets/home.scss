@@ -65,11 +65,25 @@
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   max-width:322px;
 }
+.entry-component {
+  float:left;
+  margin-right:25px;
+}
+.entry p.entry-date {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  color: #969696;
+  font-size: 12px;
+  line-height: 12px;
+}
 .entry p.entry-title {
-  height: 68px;
+  height: 73px;
   font-size: 17px;
   line-height: 24px;
   overflow: hidden;
+  padding:5px;
+  font-weight:300;
 }
 .entry p.entry-meta {
   padding: 5px;

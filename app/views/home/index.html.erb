@@ -30,19 +30,68 @@
           </a>
       </div>
       
-      <div class="latest-news">
-        <h2 class="news">Latest News</h2>
-        
-        <% @latest_news.each do |post| %>
-            <div class="entry">
-              <p class="entry-comments">10</p>
-              <%= image_tag post.image_url, class:'image-load' %>
-              <p class="entry-title"><%= post.title %></p>
-              <p class="entry-meta">Some data</p>
-            </div>
-          <% end %>
-  </div>
+      <div class="row">
+        <div class="latest-news">
+          <h2 class="news">Latest News</h2>
+          <% @latest_news.each do |post| %>
+              <div class="entry entry-component">
+                <!-- <p class="entry-comments">10</p> -->
+                <%= image_tag post.image_url, class:'image-load' %>
+                <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
+                <p class="entry-meta"></p>
+                <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
+              </div>
+            <% end %>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="latest-news">
+          <h2 class="news">Latest Music</h2>
+          <% @latest_music.each do |post| %>
+              <div class="entry entry-component">
+                <!-- <p class="entry-comments">10</p> -->
+                <%= image_tag post.image_url, class:'image-load' %>
+                <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
+                <p class="entry-meta"></p>
+                <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
+              </div>
+            <% end %>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="latest-news">
+          <h2 class="news">Latest Videos</h2>
+          <% @latest_videos.each do |post| %>
+              <div class="entry entry-component">
+                <!-- <p class="entry-comments">10</p> -->
+                <%= image_tag post.image_url, class:'image-load' %>
+                <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
+                <p class="entry-meta"></p>
+                <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
+              </div>
+            <% end %>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="latest-news">
+          <h2 class="news">Latest Lifestyle</h2>
+          <% @latest_lifestyle.each do |post| %>
+              <div class="entry entry-component">
+                <!-- <p class="entry-comments">10</p> -->
+                <%= image_tag post.image_url, class:'image-load' %>
+                <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
+                <p class="entry-meta"></p>
+                <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
+              </div>
+            <% end %>
+        </div>
+      </div>
+            
+    </div>
   <div class='col-3'>
-    some Add
+    <%= link_to 'Create Post', new_post_path, class:'btn btn-secondary btn-lg btn-block'%>
   </div>
 </div>

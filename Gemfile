@@ -35,7 +35,8 @@ gem 'config'
 gem 'trix'
 gem 'devise'
 gem 'pundit'
-gem 'owlcarousel-rails'
+gem 'seed_dump'
+gem 'pg'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

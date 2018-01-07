@@ -4,6 +4,11 @@ class Post < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings
   
+  validates :title, presence: true
+  validates :image, presence: true
+  validates :description, presence: true
+  validates :category, presence: true
+  
   def slug
     title.parameterize.downcase
   end

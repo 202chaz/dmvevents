@@ -10,28 +10,29 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <%= link_to 'Home', root_url, class:'nav-link', onclick:'initCarousel()'%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">News</a>
+        <%= link_to 'News', news_index_path, class:'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Lifestyle</a>
+        <%= link_to 'Lifestyle', lifestyle_index_path, class:'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Music</a>
+        <%= link_to 'Music', music_index_path, class:'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Songs</a>
+        <%= link_to 'Videos', videos_index_path, class:'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Mixtapes</a>
+        <%= link_to 'Mixtapes', mixtapes_index_path, class:'nav-link' %>
       </li>
     </ul>
+    <!--
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
     <%#= link_to "Sign Up", new_user_registration_path %> | <%= link_to "Sign In", new_user_session_path if !user_signed_in? %> <%= link_to "Log Out", destroy_user_session_path, :method => :delete if user_signed_in? %>
   </div>
 </nav>

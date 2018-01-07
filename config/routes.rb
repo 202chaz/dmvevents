@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'videos/index'
+
+  get 'mixtapes/index'
+
+  get 'music/index'
+
+  get 'lifestyle/index'
+
+  get 'news/index'
+
   root 'home#index'
   get 'tags/:tag', to: 'posts#index', as: :tag
   

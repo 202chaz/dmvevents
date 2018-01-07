@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-9">
+    <h1 class="news">Music</h1>
+      <% @posts.each do |post| %>
+          <div class="entry entry-component">
+            <!-- <p class="entry-comments">10</p> -->
+            <%= image_tag post.image_url, class:'image-load' %>
+            <p class="entry-title"><%= link_to post.title, slug_path(post, :slug => post.slug), class:'entry-title' %></p>
+            <p class="entry-meta"></p>
+            <p class="entry-date"><%= time_ago_in_words(post.created_at) %></p>
+          </div>
+        <% end %>
+  </div>
+  <div class="col-3">
+    adds
+  </div>
+</div>

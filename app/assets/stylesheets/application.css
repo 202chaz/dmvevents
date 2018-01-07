@@ -13,8 +13,6 @@
  *= require_tree .
  *= require trix
  *= require_self
- *= require owl.carousel
- *= require owl.theme
  */
 
 @import url('https://fonts.googleapis.com/css?family=Erica+One|Righteous|Roboto|Open+Sans+Condensed:300');
@@ -22,4 +20,5 @@
 body {
   background-color:$white;
   font-family: 'Roboto', sans-serif;
+   -webkit-font-smoothing: antialiased !important;
 }
