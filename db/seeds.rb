@@ -1,6 +1,10 @@
 User.create!([
   {email: "admin@test.com", password:'123abc', encrypted_password: "$2a$11$7wkFb5pYGkUCXfb9vCgOr.zQ5IVfeTzV4M7zGNr68qTf7Ji645wd6", username: nil, reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2018-01-07 01:58:58", last_sign_in_at: "2018-01-07 01:58:58", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
 ])
+Role.create!([
+  {name: "Admin"},
+  {name: "content_manager"}
+])
 Assignment.create!([
   {user_id: 1, role_id: 1}
 ])
@@ -17,10 +21,6 @@ Post.create!([
   {image_data: "{\"id\":\"10e602c7f77d56783e9577784db075b1.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"video-237256-355au6shqgl4cdz3q9fz0g.jpg\",\"size\":31829,\"mime_type\":\"image/jpeg\"}}", title: "LAMBORGHINI UNLEASHES ITS NEW SUV “THE URUS” PRICED AT $200,000", description: "<div>Lamborghini is stepping back into the SUV market with their second SUV ever in the brands history. The Urus will be released in 2018. Lamborghini CEO Stefano Domenicali gave his thoughts on the Urus saying <strong>“The Lamborghini Urus is a visionary approach based on the infusion of Lamborghini DNA into the most versatile vehicle, the SUV.” He went on to say “The Urus elevates the SUV to a level not previously possible, the Super SUV. It is a true Lamborghini in terms of design, performance, driving dynamics and emotion as well as drivable every day in a range of environments.”<br></strong><br></div><div>The car specs are rumored that it can go from 0-to-62 MPH in 3.6 seconds, and can also go from 0-to-124 MPH in 12.8 seconds. The Urus can also reach a maxium speed of 190 MPH. The Urus has a 4.0-litre V twin-turbo engine, and an automatic eight-speed gearbox.<br><br></div><div>The Urus also features different driving modes to help the driver navigate. The modes are CORSA, SPORT, SABBIA (sand), NEVE (snow), TERRA (off-road), and STRADA.<br><br></div><div>The URUS will release in Spring 2018 at a price of $200,000 USD, and a plug-in hybrid model is expected to drop in 2020.<br><br><br></div>", embed_files: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/vX_P_uo15Yo\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>", category: "lifestyle", authord_id: 1, featured: false, spotlighted: false},
   {image_data: "{\"id\":\"b07ecb5eea431c9ee1371726b2964547.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"jordan-3-black-cement-february-2018-release-date-2.jpg\",\"size\":143431,\"mime_type\":\"image/jpeg\"}}", title: "AIR JORDAN 3 BLACK/CEMENT TO RELEASE IN FEBRUARY AFTER 17 YEARS", description: "<div>The Air Jordan 3 “Black Cement” is a black and grey version of Michael Jordan’s third signature shoe. It originally released in 1988, followed by 1994, 2001, 2008, and 2011 featuring a mix of leather, elephant print, and visible Air. The shoe releases again with Remastered OG “Nike Air” branding on Michael Jordan’s birthday, February 17th, 2018 for $200 in celebration of the sneaker’s 30th Anniversary.</div>", embed_files: "", category: "lifestyle", authord_id: 1, featured: true, spotlighted: false},
   {image_data: "{\"id\":\"d6477db2515792d41d2bf4280fc7a9d6.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"katrina-air-jordan-3-35am658yckwfeaibcmb474.jpg\",\"size\":27327,\"mime_type\":\"image/jpeg\"}}", title: "FIRST LOOK AT AIR JORDAN 3 “KATRINA”", description: "<div>The Air Jordan 3 “Katrina” was originally drawn up over 12 years ago in order to raise funds for Hurricane Katrina Victims. While the sneaker never made a wide release, it is scheduled to do just that early next year. Last week, we brought you the first look at actual images of the “Fire Red” and “Cement” 3 hybrid, and now brings a closer view of the design. Similar to the initial images of the “Black Cement” 3 that surfaced, these images are of a kids-size version which is the reason for the oversized perforations on the lace and heel panelling. Enjoy an up-close look at the Air Jordan 3 “Katrina” below and mark your calendars for May 12th, when this pair is scheduled to arrive at Jordan Brand retailers.</div>", embed_files: "", category: "lifestyle", authord_id: 1, featured: false, spotlighted: false}
-])
-Role.create!([
-  {name: "Admin"},
-  {name: "content_manager"}
 ])
 Tag.create!([
   {name: "cardi b"},
