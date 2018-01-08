@@ -18,7 +18,7 @@
 @import url('https://fonts.googleapis.com/css?family=Erica+One|Righteous|Roboto|Open+Sans+Condensed:300');
 
 body {
-  background-color:$white;
+  background-color:#fff;
   font-family: 'Roboto', sans-serif;
    -webkit-font-smoothing: antialiased !important;
 }
